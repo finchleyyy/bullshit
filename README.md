@@ -1,0 +1,2 @@
+# bullshit
+first stupid project
