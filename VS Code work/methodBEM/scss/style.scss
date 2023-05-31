@@ -1,0 +1,1197 @@
+@import "_zero";
+// @import "slaydShow";  //! не забыть вернуть 
+// @import "slaydShow-second";
+$main-color: #DF0001; //главный цвет
+// !создание шаблонов - записывается как обычный класс, но в начале ставится % (название любое)
+// !далее, чтобы его применить пишем @extend и название шаблона, например:
+%button{ 
+    
+    border: 1px solid $main-color;
+    border-radius: 15px;
+    background-color: $main-color ;
+    padding: 8px 15px;
+    color: white;
+    // --------------
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 19px;
+}
+// шаблон должен ставиться до изменённого кода
+// далее в обычном классе можно эти параметры изменять
+// ! создание миксинов ------------ЕЩЁ РАНО ВСЁ ТАКИ, НУЖНО ОСВОИТЬ ПРЕДЫДУЩЕЕ
+// @mixin
+html, body{
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+
+}
+.main{
+flex-grow: 1;//!занимает всё свободное место
+}
+
+// !нужно заменить картинки соразмерными, настроить их 
+// !вообще лучше переделать всё меню
+// ? исправлено ++
+
+
+@import "header";
+
+
+
+
+
+
+.first-fullscreen-page {
+    position: relative;
+    height: 100vh;
+    // background-image: url(../img/picPAGE/back.jpg);
+    background-color: black;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+// ! настройка размеров видео
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.7;
+    
+}
+.menu {
+    position: absolute;
+// left: 10%;
+margin: 0 10%;
+
+top: 100px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+// оформление
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 16px;
+line-height: 18px;
+		&__item {
+            margin: 0 2vw; // ширина, процент от экрана
+            text-decoration: none;
+            color: white;
+            
+		}
+}
+.content-page1 {
+    position: absolute;
+    top: 200px;
+    left: 12vw;
+
+		&__main {
+            // position: absolute;
+            // top: 200px;
+            // margin:0 ;
+            // left: 12vw;
+            width: 60%;
+            margin-bottom: 100px;
+            // -----------------
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 58px;
+
+            
+		}
+
+		&__secondary {
+            // display: block;
+            // position: absolute;
+            // top: 200px; 
+            // left: 12vw;
+            width: 60%;
+            // ----------------
+            margin-bottom: 100px;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+		}
+        &__button-choose {
+            @extend %button;
+            // background-color: none;
+            background-color:  rgba(0, 0, 0, 0);
+            border-color: white;
+            margin-right: 20px;
+            border: solid 2px;
+            width: 150px;
+            &:hover{
+                background-color: $main-color;
+                
+            }
+        }
+      
+        &__button-zapis {
+            @extend %button;
+            background-color:  rgba(0, 0, 0, 0);
+            border-color: white;
+            border: solid 2px;
+            width: 150px;
+            &:hover{
+                background-color: $main-color;
+                
+            }
+        }
+        a{
+         text-decoration: none;  
+         color: white; 
+        }
+}
+// ! до этого совсем не правильная расстановка на странице( ссылки и контент нужно было в одно запихнуть
+.present-page1 {
+    background-color: #F3F3F3;
+    min-height: 100vh;
+    position: relative;
+   
+    display: flex;
+    align-items: center;
+  justify-content: center;
+&__titletwise{
+    position: absolute;
+    width: 76%;
+    top: 20px;
+}
+    &__back-text {
+        // display: inline-block;
+        position: absolute;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 120px;
+line-height: 116px;
+
+color: rgba(168, 161, 161, 0.53);
+    }
+    &__front-text {
+        position: absolute;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 39px;
+
+color: #000000;
+margin: 68px 0px 0px 5px;
+
+    }
+
+    &__picture {
+        position: absolute;
+        margin: 0 auto;
+        top: 180px;
+       
+    }
+    &__img{
+        margin: 0 auto;
+        display: block;
+   
+    }
+
+    &__button1 {
+        position: absolute;
+        display: block;
+        top: 520px;
+        @extend %button;
+        a{
+            color: white;
+        }
+    }
+
+    &__button2 {
+        position: absolute; 
+        display: block;
+        top: 600px;
+        @extend %button;
+        
+    }
+    &__bottom-line{
+        position: absolute;
+        width: 800px;
+        top: 670px;
+        border-bottom: 1px solid #D1CDCD;
+    }
+}
+@import "slaydShow"; 
+.present-page2 {
+    
+    position: relative;
+    height: 100vh;
+    background-color: #F3F3F3;
+    // background-color:yellowgreen ;
+&__titletwise{
+    position: absolute;
+    width: 76%;
+    top: 20px;
+    left: 12%;
+}
+    &__content {
+        position: absolute;
+        top: 300px;
+        width: 30%;
+        left: 12%;
+    }
+
+    &__title {
+        // position: absolute;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 27px;
+margin-bottom: 50px;
+    }
+
+    &__main-content {
+        // position: absolute;
+        // top: 20px;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 25px;
+line-height: 27px;
+    }
+    &__button {
+        // position: absolute;
+       
+        @extend %button;
+        padding: 20px 60px;
+        margin-top: 20px;
+    }
+}
+// !вышло слишком не правильно по структуре и поэтому много лишнего
+.clubs{
+    min-height: 100vh;
+    background-color: black;
+    // background-image: url(/methodBEM/img/picPAGE/clubs.jpg);
+    // opacity: 0.5;
+    position: relative;
+ &__back{
+    position: absolute;
+    // background-color: #000000;
+    // background-image: url(/methodBEM/img/picPAGE/clubs.jpg);
+    min-height: 100%;
+    // min-width: 100vw;
+    width: 100%;
+    opacity: 0.5;
+ }
+
+}
+.all-club {
+    // z-index: 2;
+    min-height: 100vh;
+    // background-color: black;
+    // background-image: url(/methodBEM/img/picPAGE/clubs.jpg);
+    // opacity: 0.6;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    // line-height: 100px;
+    // &:last-child{
+    //     display: flex;
+    //     flex-direction: column;
+    //     // justify-content:center;
+    //     top: 100px;
+    // }
+ 
+}
+
+.title {
+
+    position: absolute;
+    top: 5%;
+width: 76%;
+left: 12%;
+color: white;
+    &__main-title {
+        font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+    }
+
+    &__secondary-title {
+        font-weight: 400;
+        font-size: 19px;
+        margin-top: 10px;
+    }
+}
+
+.all-content{
+    position: absolute;
+    // text-align: center;
+    // float: 12%;
+    left: 12%;
+   display: grid;
+   grid-template: repeat(2,auto) / repeat(4,auto); 
+   grid-gap: 2% 1%;  // задаём отсутпы между колонками 
+
+   width: 76%;
+top: 140px;
+
+   
+}
+
+.set {
+    display: block;
+    background-color: white;
+    // background-color: red;
+    border-radius: 5%;
+    
+    
+// position: absolute; 
+// top: 100px;
+// left: 200px;
+width: 100%;
+height: 100%;
+		&__card {
+            margin-left: 10px;
+            // width: 60%;
+            // padding-right: -20px;
+            // border: 2px solid black;
+            // border-radius: 10%;
+		}
+
+		&__position {
+            position: relative;
+            display:block;
+            margin-bottom: 20px;
+            // margin-left: 20px;
+            
+		}
+
+		&__pic {
+            display: inline;
+    //         display: table-cell;
+    // vertical-align: middle;
+		}
+
+		&__name-place {
+            position: absolute;
+            display:inline;
+            top: 40%;
+            left: 23%;
+    //         display: table-cell;
+    // vertical-align: middle;
+    
+        
+            // margin-top: 5px;
+            // top: 50%;
+            // text-align: center;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 21px;
+line-height: 18px;
+            
+		}
+
+		&__content {
+            // display: inline-block;
+            margin-bottom: 20px;
+            // margin-left: 10px;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 15px;
+    p{
+        margin-top:5px ;
+    }
+		}
+
+		&__number {
+            // display: inline-block;
+            margin-bottom: 20px;
+            // margin-left: 10px;
+            font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 15px;
+		}
+
+		&__button {
+            // @extend %button;
+            display: inline-block;
+            text-align: center;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0);
+            color: #000000;
+            border: 1px solid black;
+            margin: 20px 0 40px 0px;
+            
+        
+            padding: 5px 20px;
+
+            font-size: 16px;
+            a{
+                text-decoration: none;
+                color: #000000;
+            }
+		}
+       
+      
+}
+.poisk-na-karte{
+    position: absolute;
+    z-index: 1;
+    @extend %button;
+    // vertical-align: text-bottom;
+    display: inline-block;
+    // vertical-align: center;
+    // flex-direction: column;
+    // justify-content: center;
+    // margin-top: 300px;
+    // text-align: center;
+    margin:0 auto;
+    // text-align: center;
+    top: 90%;
+    left: 44%;
+    // left:50%;
+// transform:translate(-90%, -44%);
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // top: 700px;
+// +поднастроить кнопку по размерам
+// !здесь не правильно сделал, лучше закинуть это сразу после контента, а не отдельно на страницу
+// !и сделать как-то, чтобы после закидывания это не был элемент grid-контейнера
+a{
+    text-decoration: none;
+    color: white;
+}
+}
+// ! в будущем стоит найти другой подход к построению таких страниц
+
+
+
+
+.present-page3 {
+    position: relative;
+    height: 100vh;
+    background-color: #F3F3F3;
+    &__titletwise {
+        position: absolute;
+        width: 76%;
+        top: 20px;
+        left: 12%;
+    }
+
+    &__content {
+        position: absolute;
+        top: 300px;
+        width: 30%;
+        right: 12%;
+
+    }
+
+    &__title {
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 27px;
+margin-bottom: 50px;
+    }
+
+    &__main-content {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 25px;
+        line-height: 27px;
+    }
+
+    &__button {
+        @extend %button;
+        padding: 20px 60px;
+        margin-top: 20px;
+    }
+}
+// я всё сломал на слайд страницах...
+.reklama-one {
+    width: 100%;
+    height: 370px;
+    background-color: #000000;
+
+    position: relative;
+
+    &__content {
+        width: 500px;
+        height: 100%;
+        position: absolute;
+        border-left: 2px rgba(255, 250, 250, 0.8) solid;
+        padding-left: 20px;
+        left: 12%;
+        color: white;
+
+    }
+
+    &__content-title {
+        margin-top: 50px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        span{
+            color: $main-color;
+        }
+    }
+
+    &__content-button {
+        margin-top: 40px;
+        @extend %button;
+        font-size: 17px;
+
+    }
+
+    &__content-conditions {
+        margin-top: 40px;
+        color: rgba(255, 250, 250, 0.8);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        p{
+            margin: 5px 0 5px 0;
+        }
+    }
+
+    &__image {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+     
+     
+    }
+}
+.present-page4 {
+    // z-index: 2;
+min-height: 100vh;
+background-color: #F3F3F3;
+
+position: relative;
+// z-index: 2;
+
+    &__all-blocks {
+        position: absolute;
+        top: 140px;
+        width: 76%;
+        left: 12%;
+        display: grid;
+   grid-template: repeat(3,auto) / repeat(2,auto); 
+   grid-gap: 4% 5%;  // задаём отсутпы между колонками 
+
+        
+    }
+
+    &__block {
+        // border: 1px solid red;
+        position: relative;
+        // width: 90%;
+        // min-width: 50%;
+        // height: 30%;
+    }
+
+    &__block-pic {
+        float: left;
+        // display: inline-block;
+        // margin-right: 30px;
+        // padding: -100px;
+        width: 150px;
+    }
+
+    &__block-content {
+        position: absolute;
+        display: inline;
+        margin-left:20px;
+        margin-right: 100px;
+    
+    }
+
+    &__block-content-title {
+        // position: absolute;
+		color: black;
+        display: inline-block;
+        margin-bottom: 20px;
+        // ---------------------
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 29px;
+    }
+
+    &__block-content-text {
+        margin-bottom: 45px;
+        // -------------------------
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 19px;
+line-height: 21px;
+
+color: rgba(0, 0, 0, 0.6);
+
+        
+    }
+    &__button{
+        @extend %button;
+        // position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 700px   ;
+         
+        // left: 50%;
+        // z-index: 1;
+    }
+}
+.present-page5 {
+height: 100vh;
+position: relative;
+background-color:#F3F3F3;
+    &__main{
+        position: absolute;
+        left: 12%;
+        width: 76%;
+        // top: 100px;
+
+    }
+    &__titletwise {
+        
+    }
+
+    &__content {
+        // position: absolute;
+        // top: 100px;
+        margin-top: 130px;
+        width: 100%;
+        display:grid;
+       
+        grid-template: repeat(4,auto) / repeat(3,350px); 
+        grid-gap: 2% 1%;  // задаём отсутпы между колонками 
+    }
+
+    &__content-block {
+        
+        // width: 30%;
+        width: 350px;
+        // display: inline-block;
+        height: 130px;
+        position: relative;
+        overflow:hidden; // обрезало картинку
+        // ! Свойство overflow управляет отображением содержания блочного элемента,
+        // ! если оно целиком не помещается и выходит за область заданных размеров.
+    }
+    &__content-block-img{
+        position: absolute;
+        // background-color: #000000;
+        top:50%;
+   left:50%;
+   transform:translate(-50%,-50%); // выравнили картинку
+   width: 350px;
+   height: 130px;  
+   object-fit:cover;
+  
+//  ! Свойство object-fit определяет, каким образом содержимое замещаемых элементов
+//  ! будет подогнано к краям контейнера тега в случае,
+//  ! когда для элемента заданы ширина и высота, отличные от его собственных размеров.
+        img{
+            width: 100%;
+            // opacity: 0.6;
+            filter: brightness(60%);
+            // ! новый способ затемнить изображение
+            // ! но проподает текст в моём случае без z-index xxxxx
+            // transform: scale(1);
+        }
+        img:hover{
+            transform: scale(1.1); // эффект приближения
+            transition: 1s; //  время эффекта
+        }
+        
+      
+
+    }
+    &__content-block-img-text{
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translate(0%,-50%);
+        text-align: center;
+    
+        div{
+            display: inline-block;
+            color: white;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+
+        }
+    }
+}
+.present-clubcard {
+    height: 115vh;
+    position: relative;
+    &__main {
+        position: absolute;
+        left: 12%;
+        width: 76%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__titletwise {
+        // position: absolute;
+
+    }
+
+    &__main-text {
+        margin-top: 150px;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+    }
+
+    &__main-applicaton {
+        margin-top: 30px;
+        @extend %button;
+        border-radius: 5px;
+        width: 200px;
+
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+    }
+
+    &__main-installment {
+        margin-top: 10px;
+        @extend %button;
+        border-radius: 5px;
+        width: 200px;
+        background-color: #FFDD2D;
+        color: #000000;
+        border-color: #FFDD2D;
+        
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+    }
+
+    &__main-cards {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+       
+        
+    
+    }
+
+    &__main-cards-block {
+        background-color:  #F3F3F3;
+        border: 1px  #F3F3F3 solid;
+        border-radius: 10px;
+        // margin-left: -50px;
+
+        
+
+    }
+    &__main-cards-block:hover{
+         /* Свойство отвечающее за формирование тени 
+   8px - отступ по оси Х
+   10px - отступ по оси Y
+   5px - радиус размытия тения
+   2px - радиус распространения
+   rgba - функция формирующая цвет тени
+  */
+  box-shadow: 8px 10px 5px 2px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03); // эффект приближения
+            transition: 1s; //! время эффекта можно отсавить только его для эффекта тени
+    }
+   
+
+    &__main-cards-block-inf {
+        text-align: center;
+        font-style: normal;
+font-weight: 700;
+font-size: 28px;
+    }
+
+    &__main-cards-block-cost {
+        margin-top: 30px;
+        text-align: center;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+color: rgba(0, 0, 0, 0.52);
+    }
+
+    &__main-cards-block-buttons {
+        margin: 30px 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // margin: 0 -5px;
+    }
+
+    &__main-cards-block-buttons-register {
+        // flex: 1 1 auto;
+        margin: 0 2px;
+        @extend %button;
+
+        border-radius: 5px;
+        padding: 8px 15px;
+
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+    }
+
+    &__main-cards-block-buttons-detail {
+        // flex: 1 1 auto;
+        margin: 0 2px;
+
+        border: 1px black solid;
+        border-radius: 5px;
+        padding: 8px 15px;
+
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+        
+    }
+}
+
+
+
+
+// !футер
+.footer{
+    width: 100%;
+    height: 600px;
+    background-color: black;
+    position: relative;
+    }
+    .footer-page {
+        position: absolute;
+color: white;
+left: 12%;
+width: 76%;
+height: 100%;
+		&__name-politic {
+            a{
+                color: white;
+            }
+		}
+
+		&__name-politic-brand {
+		}
+
+		&__name-politic-politic {
+            margin-top: 50px;
+            p{
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: rgba(255, 255, 255, 0.54);}
+
+		}
+
+		&__inf {
+            position: absolute;
+            // left: 700px;
+            // float: right;
+            right: 1%;
+            margin-left: auto;
+            margin-top: -130px;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 25px;
+		}
+
+		&__inf-menu {
+            display: inline-block;
+            
+          
+            li{
+                color: white;
+                // margin: ;
+            a{
+                color: white;
+            }
+            }
+            li:first-child{
+                color: $main-color;
+              
+            }
+		}
+
+		&__inf-clubs {
+            margin-left: 40px;
+            // margin-right: 60px;
+            display: inline-block;
+            li:first-child{
+                color: $main-color;
+                line-height: 18px;
+                margin-bottom: 10px;
+            }
+            li{
+                a{
+                    color: white;
+                }
+            }
+		}
+
+		&__middle {
+            // top: 350px;
+            // top: 0;
+            bottom: 0;
+            margin-bottom: 50px;
+            // height: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // display: inline-block;
+            width: 100%;
+            
+		}
+
+		&__middle-first {
+            text-align: center;
+           margin-bottom: 50px;
+		}
+
+		&__middle-first-pic {
+            
+        
+		}
+
+		&__middle-first-text {
+            margin-top: 10px;
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 19px;
+
+color: rgba(255, 255, 255, 0.54);
+		}
+
+		&__middle-second {
+            text-align: center;
+		}
+
+		&__middle-second-pic {
+		}
+
+		&__middle-second-text {
+		}
+}
+// * исправить шапку (сделать, чтобы была изначально частью страницы, потом как отдельный элемент)
+//! исправить слайд страницу - тяжелооо 
+//* добавить визуальную привлекательность (стиль кнопок, эффекты наведения и т.д)
+//* начать добавлять страницы - 1) регистрация 2)бесплатная тренировка 3) запись и т.д. 
+//?доделать остальные страницы сайта
+
+
+.popup-bg {
+    z-index: 5;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    // flex-direction: column;
+    // justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    // text-align: center;
+   img{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+   }
+}
+
+.close-popup{
+   
+}
+.forms {
+    position: absolute;
+// width: 400px;
+width: 33%;
+height: 500px;
+background-color: white;
+left: 50%;
+right: 50%;
+transform: translate(-50%,30%); 
+// !translate выравнивает по центру со значениями 50/50 , о чём я не знал и тупил
+
+display: flex;
+flex-direction: column;
+// justify-content: center;
+// align-items: center;
+        &__connect{
+            text-align: center;
+            width: 70%;
+            display: inline-block;
+            margin: 20px auto;
+
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+        }
+		&__block {
+         display: inline-block;
+         width: 70%;
+         margin: 0 auto;
+
+        margin-bottom: 20px;
+		}
+
+		&__block-input {
+            border: 1px solid #D1CDCD;
+            border-radius: 5px;
+            height: 50px;
+
+            width: 100%;
+            display: inline-block;
+            // margin: 0 auto;
+            padding-left: 20px;
+            font-size: 14px;
+		}
+
+		&__zapis {
+            width: 70%;
+            margin: 0 auto;
+		}
+
+		&__zapis-button {
+            width: 100%;
+            margin: 0 auto;
+            height: 40px;
+            border: 1px solid $main-color;
+            border-radius: 10px;
+            color: white;
+            background-color: $main-color;
+            text-align: center;
+
+
+
+            font-style: normal;
+font-weight: 700;
+font-size: 14px;
+		}
+
+		&__politic {
+            margin: 0 auto;
+            width: 70%;
+            text-align: center;
+
+            font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+            span{
+                margin-top: 5px;
+                display: block;
+                color: $main-color;
+            }
+
+            
+		}
+}
+.input-name {
+    
+    
+}
+.input-number {
+    
+}
+.select-location {
+}
+.no-scroll{
+    overflow-y: hidden;
+}
+
+.popup-map {
+    z-index: 5;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    img{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+       }
+    &__container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+    }
+
+    &__container-content {
+        width: 350px;
+        height: 350px;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__close{
+
+    }
+}
+
+@import "_promo";
