@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------------------------------------------------*/
+.main {
+  margin: 0 auto;
+  width: 1300px;
+}
+
+.page1 {
+  margin-top: 20px;
+}
+.page1__content {
+  border: 1px solid #85D968;
+  background-color: #85D968;
+  border-radius: 20px;
+}
+.page1__fake {
+  display: flex;
+  flex-direction: column;
+}
+.page1__title {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.page1__blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px;
+}
+.page1__block {
+  width: 260px;
+}
+.page1__image {
+  border: 5px solid #FFDB59;
+  border-radius: 30px;
+}
+.page1__image img {
+  overflow: hidden;
+  width: 100%;
+}
+.page1__date {
+  color: #A8F88C;
+  margin-top: 20px;
+}
+.page1__event-name {
+  color: #429A23;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.page1__event-text {
+  margin-top: 10px;
+}
+
+.page2 {
+  margin-top: 40px;
+}
+.page2__wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.page2__title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #FF6231;
+  margin-bottom: 20px;
+}
+.page2__image {
+  width: 500px;
+}
+.page2__image img {
+  overflow: hidden;
+  width: 100%;
+  border: 5px solid #FFDB59;
+  border-radius: 46%;
+}
+.page2__block2 {
+  width: 600px;
+}
+.page2__text1 {
+  margin: 20px 0;
+}
+.page2__button {
+  border-radius: 30px;
+  border: 1px solid #FF6231;
+  background-color: #FF6231;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
